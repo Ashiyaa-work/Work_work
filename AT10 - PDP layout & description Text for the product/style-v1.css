@@ -1,0 +1,52 @@
+.at-10-test
+	.shopify-section
+	.content-for-grouping
+	.page-width
+	.content-and-results {
+	grid-template-columns: 1fr !important;
+}
+//Section-1
+.at-10-test .spray-amount-title {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 18px;
+	align-items: center;
+	text-transform: uppercase;
+	color: #000000;
+	border: 1px solid #cfab4b;
+	border-radius: 4px;
+	padding: 9px 23px;
+}
+//Section-2
+.at-10-test .perfume-price {
+	font-size: 14px;
+}
+.at-10-test .perfume-price p span {
+	color: #000000;
+}
+.at-10-test .perfume-price p span {
+	font-weight: bold;
+}
+
+//Section-3
+
+.at-10-test .perfume-review .results-rows-container {
+	display: flex;
+}
+.at-10-test .perfume-review img {
+	width: 300px;
+	height: 350px;
+}
+
+@media (max-width: 380px) {
+	//section-2
+	.at-10-test .perfume-price {
+		display: none !important;
+	}
+}
