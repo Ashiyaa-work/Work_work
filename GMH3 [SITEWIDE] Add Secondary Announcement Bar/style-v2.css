@@ -1,0 +1,37 @@
+.gmh-03-test .secondary-bar {
+	text-align: center !important;
+	background-color: #f2f2f2;
+}
+.gmh-03-test .secondary-bar p {
+	font-family: 'Roboto Condensed';
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.09px;
+	margin: 15px 0px !important;
+	color:#000000 !important;
+}
+.gmh-03-test .secondary-bar p a {
+	font-family: 'Roboto Condensed';
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 21.09px;
+}
+[data-product-title="Trim Pod 2.0 Women Shaver"] .page-content{
+	padding-top: 0px !important;
+}
+[data-product-title="Trim pod 2.0"] .page-content{
+	padding-top: 0px !important;
+}
+@media (max-width: 767px) {
+	.gmh-03-test .secondary-bar p {
+		font-size: 14px !important;
+		font-weight: 400;
+		line-height: 16.41px;
+	}
+	.gmh-03-test .secondary-bar p a {
+		font-size: 14px !important;
+		font-weight: 700;
+		line-height: 16.41px;
+	}
+
+}
