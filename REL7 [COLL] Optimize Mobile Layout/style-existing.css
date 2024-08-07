@@ -1,0 +1,8 @@
+.box__collection .lap--box--small-lg .product-item .caption,
+.box__collection.box--typo-small .product-item .caption{
+    padding: 0 5px !important;
+}
+.box__collection.box--big .product-item,
+.template-collection .box__collection{
+	    padding: 20px 10px;
+}
