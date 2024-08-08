@@ -38,6 +38,9 @@
     };
   
     waitForElement("body").then(() => {
-      loadTest();
+      var isMobile = window.matchMedia("(max-width: 733px)").matches;
+      if (isMobile) {
+          loadTest();
+      }
     });
   })();
