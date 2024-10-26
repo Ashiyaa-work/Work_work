@@ -1,0 +1,190 @@
+.org-test .review-container {
+    width: 100%;
+    background: #F6F2EF;
+    border: 1px solid #4A7582;
+    margin-top: 10px;
+}
+
+.org-test .review-container h2 {
+    font-family: 'Aleo';
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    color: #333333;
+}
+
+.org-test .custom-slider-wrapper {
+    max-width: 1214px;
+    width: 100%;
+    margin: 30px auto 0;
+    padding: 0 5px;
+    overflow: hidden;
+}
+
+.org-test .custom-slider-wrapper .custom-review-swiper {
+    padding-bottom: 40px;
+}
+
+.org-test .custom-slider-wrapper .swiper-pagination {
+    bottom: 0;
+    opacity: 0;
+}
+
+.org-test .custom-slider-wrapper .custom-review-swiper .swiper-slide {
+
+    background: #FFFFFF;
+    border-radius: 12px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    border: 1px solid #4A7582;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-test .review-comment-wrapper {
+    padding: 7px 24px;
+}
+
+.org-test .custom-slider-wrapper .swiper-slide .review-image {
+    max-width: 260px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+
+}
+
+.org-test .custom-slider-wrapper .swiper-slide .review-image>img {
+    border-radius: 12px 12px 0 0;
+}
+
+.org-test .custom-slider-wrapper .swiper-slide .rating-stars {
+    max-height: 15.13px;
+    height: 100%;
+    max-width: 90px;
+    width: 100%;
+    margin: 0 0 13px 0;
+}
+
+.org-test .custom-slider-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.org-test .custom-slider-wrapper .swiper-slide .review-heading,
+.org-test .custom-slider-wrapper .swiper-slide .review-comment {
+    font-family: 'Barlow';
+    font-style: italic;
+    text-align: left;
+    letter-spacing: 0.6000000238418579px;
+}
+
+.org-test .custom-slider-wrapper .swiper-slide .review-heading {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    margin-bottom: 13px;
+}
+
+.org-test .custom-slider-wrapper .swiper-slide .review-comment {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.org-test #nav-profile .slick-prev {
+    left: 15px;
+}
+
+.org-test #nav-profile .slick-next {
+    right: 15px;
+}
+
+.org-test #nav-profile button.slick-prev.slick-arrow:before,
+.org-test #nav-profile button.slick-next.slick-arrow:before {
+    left: -6px !important;
+}
+
+.org-test .custom-slider-wrapper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    opacity: .25;
+    color: #000;
+    background: #000;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.org-test .custom-slider-wrapper .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+}
+
+.org-test .tab-slider.new-tab-selider-sec {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.org-test a.all-review {
+    width: 100%;
+    max-width: 182px;
+    height: 45.66px;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #000000;
+    font-family: 'Source Sans Pro', 'open Sans';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.org-test a.all-review:hover {
+    text-decoration: none;
+}
+
+@media(max-width: 1020px) {
+    .org-test .custom-slider-wrapper .swiper-slide .review-image>img {
+        border-radius: unset;
+    }
+}
+
+@media(max-width: 767px) {
+    .org-test .review-container h2 {
+        font-size: 28px;
+    }
+
+    .review-image {
+        max-width: 260px;
+        max-height: 230px;
+        width: 100%;
+        height: 100%;
+    }
+}
