@@ -58,6 +58,7 @@
                     </div>
                     <div class="prod-Image">
                         <img src="https://cdn-3.convertexperiments.com/uf/10047433/100413532/product-image.png" alt="Product Image">
+                        <img src="https://cdn-3.convertexperiments.com/uf/10047433/10048590/product-image.png" alt="Product Image">
                     </div>
                 </div>
             </div>`;

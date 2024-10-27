@@ -56,16 +56,19 @@
                     },
                     breakpoints: {
                         310: {
-                            slidesPerView: 1,
+                            centeredSlides: true,
+                            slidesPerView: 1.4,
                             spaceBetween: 10,
                         },
                         450: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
+
+                            slidesPerView: 2.5,
+                            spaceBetween: 10,
                         },
                         1024: {
+
                             slidesPerView: 4,
-                            spaceBetween: 20,
+                            spaceBetween: 10,
                         }
                     },
                     pagination: {
@@ -103,13 +106,13 @@
 
         let slides = '';
         slides = slideData.map((data, i) => `<div class="swiper-slide" data-slide-no="${i + 1}">
-        
+        <div class="review-wrap">
         <div class="review-image"><img src="${data.image}" alt="verified"></div>
         <div class="review-comment-wrapper">
-        <div class="rating-stars"><img src="${imgBaseURL}ratingstar.png" class=""alt="rating"></div>
+        	<div class="rating-stars"><img src="${imgBaseURL}ratingstar.png" class=""alt="rating"></div>
         <div class="review-heading">${data.contentHeader}</div>
         <div class="review-comment">${data.content}</div>
-        </div></div>`);
+        </div></div></div>`);
 
         const sliderEle = `<div class="review-container"><h2>See What Customers are Saying</h2><div class="custom-slider-wrapper"><div class="main-slider"><div class="swiper custom-review-swiper"><div class="swiper-wrapper">${slides.join('')}</div><div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div></div></div></div></div>`;
 
