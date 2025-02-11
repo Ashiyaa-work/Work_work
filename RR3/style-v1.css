@@ -1,0 +1,87 @@
+@media(max-width:786px){
+    .rr-03-test .shopify-section.single-slider,
+    .rr-03-test .serviceBlock .col:nth-child(4){
+        display: none;
+    }
+    .rr-03-test .hero-mobile-noCTA{
+        position: relative;
+    }
+    
+    .rr-03-test .hero-mobile-noCTA .parallelogram {
+            position: absolute;
+        width: 122px;
+        height: 55px;
+        background-color: #F22836;
+        -webkit-transform: skew(-25deg) translateY(-50%);
+            -ms-transform: skew(-25deg) translateY(-50%);
+                transform: skew(-25deg) translateY(-50%);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        gap: 5px;
+        color: #fafcfc;
+        font-weight: bold;
+        text-align: center;
+        z-index: 0;
+        top: 34%;
+        left: 55%;
+        text-decoration: none;
+    }
+    .rr-03-test .hero-mobile-noCTA .parallelogram span{
+            display: inline-block;
+        -webkit-transform: skew(20deg);
+            -ms-transform: skew(20deg);
+                transform: skew(20deg);
+        font-size: 13px;
+        font-weight: 600;
+        
+    }
+    .rr-03-test .hero-mobile-noCTA .parallelogram .arrow-img{
+        -webkit-transform: skew(20deg);
+            -ms-transform: skew(20deg);
+                transform: skew(20deg);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        max-width: 8px;
+        max-height: 10px;
+    }
+    .rr-03-test .hero-mobile-noCTA .parallelogram .img,.rr-03-test .hero-mobile-noCTA .hero-img img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .rr-03-test .serviceSec .serviceBlock{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+    .rr-03-test .serviceSec .serviceBlock .col{
+        border: none;
+        -webkit-box-flex: unset !important;
+            -ms-flex: unset !important;
+                flex: unset !important;
+    }
+    .rr-03-test .shopify-section.serviceSec{
+        padding: 25px 0;
+    }
+        
+    }
+    @media(max-width:590px){
+        
+        .rr-03-test .hero-mobile-noCTA .parallelogram {
+            top: 33%;
+        }
+    }

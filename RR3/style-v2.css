@@ -1,0 +1,137 @@
+@media(max-width:768px) {
+
+    .rr-03-test .shopify-section.single-slider,
+    .rr-03-test .serviceBlock .col:nth-child(4) {
+        display: none;
+    }
+
+    .rr-03-test .hero-mobile-noCTA {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    .rr-03-test .hero-mobile-noCTA img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .rr-03-test .hero-mobile-noCTA .parallelogram {
+        margin: auto 15px;
+        width: 90vw;
+        height: 40px;
+        -webkit-transform: skew(-25deg);
+        -ms-transform: skew(-25deg);
+        transform: skew(-25deg);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        gap: 5px;
+        color: #fafcfc;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background: #F22836;
+
+    }
+
+    .rr-03-test .hero-mobile-noCTA .parallelogram span {
+        display: inline-block;
+        -webkit-transform: skew(25deg);
+        -ms-transform: skew(25deg);
+        transform: skew(25deg);
+        font-family: "Sans-Serif", "Teko";
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 35.83px;
+        text-align: center;
+        color: #FFFFFF;
+
+
+    }
+
+    .rr-03-test .hero-mobile-noCTA .offer-description .checked-list {
+        max-width: 20px;
+        max-height: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .rr-03-test .hero-mobile-noCTA .offers {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+        margin: auto 15px;
+    }
+
+    .rr-03-test .hero-mobile-noCTA .offers .offer-description {
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .rr-03-test .hero-mobile-noCTA .offers p {
+        margin: 5px 8px;
+        color: #000000;
+        font-family: "Sans-Serif", "Poppins";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .rr-03-test .serviceSec .serviceBlock {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .rr-03-test .serviceSec .serviceBlock .col {
+        border: none;
+        -webkit-box-flex: unset !important;
+        -ms-flex: unset !important;
+        flex: unset !important;
+    }
+
+    .rr-03-test .shopify-section.serviceSec {
+        padding: 25px 0;
+    }
+}
+
+@media (max-width: 396px) {
+    .rr-03-test .hero-mobile-noCTA .offers p {
+        font-size: 12px;
+    }
+
+}
