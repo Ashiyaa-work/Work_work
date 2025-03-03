@@ -331,7 +331,7 @@ line-height: 45.6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
+  min-height: 90vh; 
   background: linear-gradient(90deg, #ffe3e3 0%, #dfd3ff 100%);
   padding: 20px;
   box-sizing: border-box;
@@ -345,6 +345,7 @@ line-height: 45.6px;
   padding: 40px;
   box-shadow: 0px 4px 20px 0px #0000001a;
   text-align: center;
+  flex-direction: column;
 }
 
 .results-container h1 {
@@ -391,10 +392,12 @@ line-height: 45.6px;
 .presentation-btn:hover {
   opacity: 0.9;
 }
-.question-container,
- #results-screen{
+
+.container:nth-child(2),
+.container:nth-child(4){
   display: none;
 }
+
 
 .question-container.hidden{
   display: none;

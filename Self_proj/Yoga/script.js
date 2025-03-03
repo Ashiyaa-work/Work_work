@@ -51,173 +51,153 @@ const menQuestions = [
 
   document.addEventListener("DOMContentLoaded", () => {
     const genderRadios = document.querySelectorAll("input[name='gender']");
-    const questionContent = document.querySelector(".question-container"); 
-    const mainBanner = document.querySelector(".section-1"); 
+    const questionContent = document.querySelector(".question-container");
+    const mainBanner = document.querySelector(".section-1").parentElement;
+    const optionsContainer = document.getElementById("options-container");
+    const questionTitle = document.getElementById("question-title");
+    const questionSubtext = document.getElementById("question-subtext");
+    const progressFill = document.getElementById("progress-fill");
+    const questionCounter = document.getElementById("question-counter");
+  
     let currentQuiz = [];
     let currentQuestionIndex = 0;
     let userAnswers = [];
   
     genderRadios.forEach(radio => {
-      radio.addEventListener("change", function() {
+      radio.addEventListener("change", function () {
         currentQuestionIndex = 0;
         userAnswers = [];
         currentQuiz = this.value === "male" ? menQuestions : womenQuestions;
-  
-        // question content visible
-        questionContent.style.display = "flex"; 
-        mainBanner.style.display="none";
+        questionContent.style.display = "flex";
+        mainBanner.style.display = "none";
         renderQuestion();
       });
     });
   
     function updateProgressBar() {
-        const progressFill = document.getElementById("progress-fill");
-        const progressPercentage = ((currentQuestionIndex + 1) / currentQuiz.length) * 100;
-        progressFill.style.width = `${progressPercentage}%`;
-      }
-      
-      function renderQuestion() {
-        const questionObj = currentQuiz[currentQuestionIndex];
-      
-        document.getElementById("question-title").textContent = questionObj.question;
-        document.getElementById("question-subtext").textContent = questionObj.subtext;
-      
-        const optionsContainer = document.getElementById("options-container");
-        optionsContainer.innerHTML = ""; 
-      
-        questionObj.options.forEach((optionText, idx) => {
-          const optionId = `option-${idx}`;
-      
-          const optionItem = document.createElement("div");
-          optionItem.classList.add("option-item");
-      
-          const radioInput = document.createElement("input");
-          radioInput.type = "radio";
-          radioInput.name = "quiz-option";
-          radioInput.id = optionId;
-          radioInput.value = optionText;
-      
-          if (userAnswers[currentQuestionIndex] === optionText) {
-            radioInput.checked = true;
-            optionItem.classList.add("selected");
-          }
-      
-          const label = document.createElement("label");
-          label.setAttribute("for", optionId);
-          label.classList.add("option-label");
-          label.textContent = optionText;
-      
-          optionItem.addEventListener("click", () => {
-            optionsContainer.querySelectorAll(".option-item").forEach(item => item.classList.remove("selected"));
-            optionItem.classList.add("selected");
-            radioInput.checked = true;
-            userAnswers[currentQuestionIndex] = optionText;
-          });
-      
-          updateProgressBar();
-          optionItem.appendChild(radioInput);
-          optionItem.appendChild(label);
-          optionsContainer.appendChild(optionItem);
+      const progressPercentage = ((currentQuestionIndex + 1) / currentQuiz.length) * 100;
+      progressFill.style.width = `${progressPercentage}%`;
+    }
+  
+    function renderQuestion() {
+      const section2 = document.querySelector('.section-2').parentElement;
+      section2.style.display = "flex"; // Ensure section is visible
+  
+      const questionObj = currentQuiz[currentQuestionIndex];
+      questionTitle.textContent = questionObj.question;
+      questionSubtext.textContent = questionObj.subtext;
+      optionsContainer.innerHTML = "";
+  
+      questionObj.options.forEach((optionText, idx) => {
+        const optionId = `option-${idx}`;
+        
+        const optionItem = document.createElement("div");
+        optionItem.classList.add("option-item");
+  
+        const radioInput = document.createElement("input");
+        radioInput.type = "radio";
+        radioInput.name = "quiz-option";
+        radioInput.id = optionId;
+        radioInput.value = optionText;
+  
+        if (userAnswers[currentQuestionIndex] === optionText) {
+          radioInput.checked = true;
+          optionItem.classList.add("selected");
+        }
+  
+        const label = document.createElement("label");
+        label.setAttribute("for", optionId);
+        label.classList.add("option-label");
+        label.textContent = optionText;
+  
+        optionItem.addEventListener("click", () => {
+          document.querySelectorAll(".option-item").forEach(item => item.classList.remove("selected"));
+          optionItem.classList.add("selected");
+          radioInput.checked = true;
+          userAnswers[currentQuestionIndex] = optionText;
         });
-      
-        document.getElementById("question-counter").textContent = `${currentQuestionIndex + 1}/${currentQuiz.length}`;
+  
+        optionItem.append(radioInput, label);
+        optionsContainer.appendChild(optionItem);
+      });
+  
+      updateProgressBar();
+      questionCounter.textContent = `${currentQuestionIndex + 1}/${currentQuiz.length}`;
+    }
+  
+    function nextQuestion() {
+      if (!userAnswers[currentQuestionIndex]) {
+        alert("Please select an option!");
+        return;
       }
-      
-      document.querySelector("#next-btn").addEventListener("click", nextQuestion);
-      document.querySelector("#prev-btn").addEventListener("click", prevQuestion);
-      
-      function nextQuestion() {
-        if (!userAnswers[currentQuestionIndex]) {
-          alert("Please select an option!");
-          return;
+  
+      if (currentQuestionIndex < currentQuiz.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion();
+      } else {
+        showLoadingScreen();
+      }
+    }
+  
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion();
+      } else {
+        document.querySelector(".question-container").classList.add("hidden");
+        mainBanner.style.display = "block";
+      }
+    }
+  
+    function showLoadingScreen() {
+      document.querySelector('.section-3').parentElement.style.display='flex';
+      document.querySelector('.section-1').parentElement.style.display = 'none';
+      document.querySelector('.section-2').parentElement.style.display = 'none';
+  
+      const loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.style.display = 'flex';
+  
+      const circle = document.querySelector('.progress-ring__circle');
+      const radius = circle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+      let progress = 0;
+  
+      circle.style.strokeDasharray = circumference;
+      circle.style.strokeDashoffset = circumference;
+  
+      const interval = setInterval(() => {
+        progress++;
+        document.getElementById('progress-percentage').textContent = `${progress}%`;
+        circle.style.strokeDashoffset = circumference - (progress / 100) * circumference;
+  
+        if (progress >= 100) {
+          clearInterval(interval);
+          setTimeout(showResultsScreen, 50);
         }
-      
-        if (currentQuestionIndex < currentQuiz.length - 1) {
-          currentQuestionIndex++;
-          renderQuestion();
-        } else {
-          /* document.querySelector(".question-container").style.display="none";      
-          document.querySelector(".section-3").style.display="flex"; */
-          showLoadingScreen();
-        }
-      }
-      
-      function prevQuestion() {
-        if (currentQuestionIndex > 0) {
-          currentQuestionIndex--;
-          renderQuestion();
-        } else {
-          document.querySelector(".question-container").classList.add("hidden");
-          document.querySelector(".section-1").style.display = "block";
-        }
-      }
-
-      function showLoadingScreen() {
-        // Hide the quiz & main screen
-        document.querySelector('.section-1').style.display = 'none';
-        document.querySelector('.section-2').style.display = 'none';
-      
-        // Show the loading screen
-        document.getElementById('loading-screen').style.display = 'flex';
-      
-        // Animate from 0% to 100% in 5 seconds (5000 ms).
-        let progress = 0;
-        const totalTime = 5000; // 5 seconds total
-        const intervalTime = 50; // update every 50ms -> 100 increments
-      
-        // Grab circle & compute circumference
-        const circle = document.querySelector('.progress-ring__circle');
-        const radius = circle.r.baseVal.value;
-        const circumference = 2 * Math.PI * radius;
-      
-        // Ensure the circle starts “empty”
-        circle.style.strokeDasharray = circumference;
-        circle.style.strokeDashoffset = circumference;
-      
-        // Start interval
-        const interval = setInterval(() => {
-          progress++;
-          // Update numeric text
-          document.getElementById('progress-percentage').textContent = progress + '%';
-          // Update circle offset
-          const offset = circumference - (progress / 100) * circumference;
-          circle.style.strokeDashoffset = offset;
-      
-          if (progress >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-              // Show the results screen instead of main screen
-              showResultsScreen();
-            }, 50);
-          }
-        }, intervalTime);
-      }
-
-      function showResultsScreen() {
-        // Hide loading screen
-        document.getElementById('loading-screen').style.display = 'none';
-        // Show results screen
-        document.getElementById('results-screen').style.display = 'flex';
-      }
-
-     document.querySelector('.presentation-btn').addEventListener('click', function(){
-      backToMainScreen();
-     })
-     
-     function backToMainScreen(){
+      }, 50);
+    }
+  
+    function showResultsScreen() {
+      document.querySelector('.section-3').parentElement.style.display = 'none';
+      document.querySelector('.section-4').parentElement.style.display = 'flex';
+    }
+  
+    function backToMainScreen() {
       document.querySelectorAll(".container").forEach(parent => {
         const firstChild = parent.firstElementChild;
-        if (firstChild && ! [...firstChild.classList].some(cls => cls.includes("section-1"))) {
-            parent.style.display="none";
+        if (firstChild && !firstChild.classList.contains("section-1")) {
+          parent.style.display = "none";
+          document.querySelector(".question-container").classList.remove("hidden");
+        } else {
+          parent.style.display = "flex";
+          firstChild.style.display = "flex";
         }
-        else
-        {
-          firstChild.style.display="flex";
-        }
-        });
-    
-     }
-      
+      });
+    }
+  
+    document.querySelector('.presentation-btn').addEventListener('click', backToMainScreen);
+    document.querySelector("#next-btn").addEventListener("click", nextQuestion);
+    document.querySelector("#prev-btn").addEventListener("click", prevQuestion);
   });
   
   
