@@ -136,8 +136,9 @@ const menQuestions = [
           currentQuestionIndex++;
           renderQuestion();
         } else {
-          document.querySelector(".question-container").style.display="none";
-          document.querySelector("#results-screen").style.display="flex";
+          /* document.querySelector(".question-container").style.display="none";      
+          document.querySelector(".section-3").style.display="flex"; */
+          showLoadingScreen();
         }
       }
       
@@ -150,6 +151,72 @@ const menQuestions = [
           document.querySelector(".section-1").style.display = "block";
         }
       }
+
+      function showLoadingScreen() {
+        // Hide the quiz & main screen
+        document.querySelector('.section-1').style.display = 'none';
+        document.querySelector('.section-2').style.display = 'none';
+      
+        // Show the loading screen
+        document.getElementById('loading-screen').style.display = 'flex';
+      
+        // Animate from 0% to 100% in 5 seconds (5000 ms).
+        let progress = 0;
+        const totalTime = 5000; // 5 seconds total
+        const intervalTime = 50; // update every 50ms -> 100 increments
+      
+        // Grab circle & compute circumference
+        const circle = document.querySelector('.progress-ring__circle');
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+      
+        // Ensure the circle starts “empty”
+        circle.style.strokeDasharray = circumference;
+        circle.style.strokeDashoffset = circumference;
+      
+        // Start interval
+        const interval = setInterval(() => {
+          progress++;
+          // Update numeric text
+          document.getElementById('progress-percentage').textContent = progress + '%';
+          // Update circle offset
+          const offset = circumference - (progress / 100) * circumference;
+          circle.style.strokeDashoffset = offset;
+      
+          if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+              // Show the results screen instead of main screen
+              showResultsScreen();
+            }, 50);
+          }
+        }, intervalTime);
+      }
+
+      function showResultsScreen() {
+        // Hide loading screen
+        document.getElementById('loading-screen').style.display = 'none';
+        // Show results screen
+        document.getElementById('results-screen').style.display = 'flex';
+      }
+
+     document.querySelector('.presentation-btn').addEventListener('click', function(){
+      backToMainScreen();
+     })
+     
+     function backToMainScreen(){
+      document.querySelectorAll(".container").forEach(parent => {
+        const firstChild = parent.firstElementChild;
+        if (firstChild && ! [...firstChild.classList].some(cls => cls.includes("section-1"))) {
+            parent.style.display="none";
+        }
+        else
+        {
+          firstChild.style.display="flex";
+        }
+        });
+    
+     }
       
   });
   

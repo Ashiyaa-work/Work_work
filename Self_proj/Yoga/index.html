@@ -72,20 +72,61 @@
         </div>
       </div>
       
-     <!--  <div class="container">
-        <div class="section-3">
-            <div class="content">
-              <h3>Achieve Your Dream Figure with Quick and Effective Workouts.</h3>
-              <p>Please wait while we match you with the best routine for maximum fat loss...</p>
-              <div class="img">
-                <img src="images/percentage-img.png" alt="percentage-img">
-              </div>
+      <div class="container">
+             <!-- Loading Screen (initially hidden) -->
+      <div id="loading-screen" style="display: none" class="section-3 loading-screen">
+        <div class="content-wrapper">
+          <!-- Left side: Text & Progress Circle -->
+          <div class="text-progress">
+            <h1>
+              Achieve Your Dream Figure with Quick and Effective Workouts.
+            </h1>
+            <p>
+              Please wait while we match you with the best routine for maximum
+              fat loss...
+            </p>
+
+            <div class="progress-container">
+              <svg class="progress-ring" width="220" height="220">
+                <!-- Background ring -->
+                <circle
+                  class="progress-ring__background"
+                  cx="110"
+                  cy="110"
+                  r="90"
+                  fill="#FFFFFF"
+                  stroke="#E0E0F9"
+                  stroke-width="20"
+                />
+                <!-- Foreground progress ring -->
+                <circle
+                  class="progress-ring__circle"
+                  cx="110"
+                  cy="110"
+                  r="90"
+                  fill="none"
+                  stroke="#3EB8E5"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                  stroke-dasharray="565.48"
+                  stroke-dashoffset="186.61"
+                  transform="rotate(-90 110 110)"
+                />
+              </svg>
+
+              <!-- Centered percentage text -->
+              <div class="progress-percentage" id="progress-percentage"></div>
             </div>
-            <div class="image">
-              <img src="images/woman-3.png" alt="women">
-            </div>
+          </div>
+
+          <!-- Right side: Fitness Model Image -->
+          <div class="fitness-image">
+            <img src="images/woman-3.png" alt="Fitness Model" />
+          </div>
         </div>
-      </div> -->
+        </div>
+      </div>
+      
       <div class="container" id="results-screen" class="results-screen">
         <div class="results-container section-4">
           <h1>Achieve Your Dream Figure with Quick and Effective Workouts.</h1>

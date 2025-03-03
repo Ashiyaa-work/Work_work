@@ -56,18 +56,24 @@ body {
   gap: 20px;
   flex-wrap: wrap;
 }
+.section-1 form input{
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+}
 
 .section-1 form label {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background: #fff;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 1rem;
-  min-width: 220px;
-  min-height: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.3sease;
+    font-size: 1rem;
+    min-width: 260px;
+    min-height: 50px;
+    padding: 0 20px;
 }
 
 .section-1 form label:hover {
@@ -104,7 +110,7 @@ body {
 .section-1 .brand img {
 
   width: 100%;
-  max-height: 50px;
+  max-height: 25px;
 }
 
 .section-1 .brand img:hover {
@@ -200,6 +206,126 @@ color: #575757;
   color:#FFFFFF;
   ;
 }
+/************** Section-3 ************************/
+
+.section-3{
+  display: none;
+}
+.section-3 h3,.section-3 p{
+  font-family: Jost;
+font-weight: 400;
+font-size: 46px;
+line-height: 55.2px;
+letter-spacing: 0%;
+
+}
+.section-3 p {
+font-size: 20px;
+line-height: 45.6px;
+}
+
+.section-3 .fitness-image{
+  max-width: 800px;
+}
+
+.section-3 .fitness-image img{
+  width: 100%;
+}
+.loading-screen {
+  width: 100%;
+  max-width: 1440px; /* so it doesn't stretch too wide */
+  margin: 0 auto;
+}
+
+/* Wrapper to hold text/progress on the left and image on the right */
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; /* space between left and right */
+  width: 100%;
+}
+
+/* Left side container for heading, paragraph, and progress circle */
+.text-progress {
+  flex: 1;
+  max-width: 705px;
+}
+
+.text-progress h1 {
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 55.2px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.text-progress p {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 45.6px;
+  color: #000000;
+  margin-bottom: 65px;
+  max-width: 575px;
+}
+
+/* Container to hold the SVG and text */
+.progress-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  left: 15%;
+}
+
+/* Make the SVG fill the container (no extra rotation here) */
+.progress-ring {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* (Optional) additional styling for the background circle if desired */
+.progress-ring__background {
+  fill: #ffffff;
+  stroke: #e0e0f9;
+  stroke-width: 20;
+}
+
+/* Foreground progress circle */
+.progress-ring__circle {
+  /* dasharray & dashoffset set inline for ~67% fill */
+  stroke-linecap: round;
+}
+
+/* Absolutely center the percentage text in the circle */
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Typography per your specs */
+  font-family: "Encode Sans Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 47.6px;
+  line-height: 87.75px;
+  text-align: center;
+  color: #409cd1;
+}
+
+/* Right side container for the image */
+.fitness-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Make the image responsive */
+.fitness-image img {
+  max-width: 100%;
+  height: auto;
+  /* Optional shadow or styling if you want it to float nicely */
+}
+
 /************** Result page***********************/
 .results-screen {
   display: flex;
